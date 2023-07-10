@@ -1,0 +1,3 @@
+
+
+vlog "/home/vishwa/SPI_Master/pll_sim/pll.vo"

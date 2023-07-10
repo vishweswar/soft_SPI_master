@@ -1,0 +1,243 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/vishwa/SPI_Master
+vclockBox
+Z1 !s110 1688676128
+!i10b 1
+!s100 LRRX?mgJ^[kbOHIn_fSNm2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I6M;C;X=fd1jHE2J2>ikDT3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1688676116
+Z5 8spimaster.v
+Z6 Fspimaster.v
+!i122 28
+L0 38 15
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1688676128.000000
+Z9 !s107 spimaster.v|
+Z10 !s90 -reportprogress|300|spimaster.v|
+!i113 1
+Z11 tCvgOpt 0
+nclock@box
+vcsnLogic
+R1
+!i10b 1
+!s100 :G2I8kk5zc0[C=Ab5Z]<c1
+R2
+IeH3lRi5l5GVST=n<:hTSY1
+R3
+R0
+R4
+R5
+R6
+!i122 28
+L0 63 7
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+ncsn@logic
+vhalfCounter
+R1
+!i10b 1
+!s100 aK[oWk_CNKzk8UF1EM>m32
+R2
+I?9C::L_1BHV^2kMjOHQW`2
+R3
+R0
+R4
+R5
+R6
+!i122 28
+L0 112 15
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+nhalf@counter
+vrxBuffer
+R1
+!i10b 1
+!s100 m[hJh13S[lk]:O3Xc5I123
+R2
+ISXhKW4oU0k4CgHMZb4gkh2
+R3
+R0
+R4
+R5
+R6
+!i122 28
+L0 96 15
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+nrx@buffer
+vrxFeeder
+Z12 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z13 !s110 1688676181
+!i10b 1
+!s100 EN@DIk0kB[D0eah^fP3LY0
+R2
+IoF>CmQ5KdLzkZdb;i46Mi2
+R3
+S1
+R0
+Z14 w1688675466
+Z15 8testbench.sv
+Z16 Ftestbench.sv
+!i122 30
+L0 39 32
+R7
+r1
+!s85 0
+31
+Z17 !s108 1688676181.000000
+!s107 testbench.sv|
+Z18 !s90 -reportprogress|300|testbench.sv|
+!i113 1
+R11
+nrx@feeder
+vsclkLogic
+R1
+!i10b 1
+!s100 [Am6oLXB:3R;h<90jN@L60
+R2
+I12jOoGTSkUIXziOd2icSE3
+R3
+R0
+R4
+R5
+R6
+!i122 28
+L0 54 8
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+nsclk@logic
+vspimaster
+R1
+!i10b 1
+!s100 1^[e6=5CZf?=z7Vo[Rm2A0
+R2
+I4m^b;VBJ0N<llz:S84mET2
+R3
+R0
+R4
+R5
+R6
+!i122 28
+Z19 L0 3 34
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+vtestbench
+R12
+R13
+!i10b 1
+!s100 ;3GY<=KVW`S_^MfK@[f5f1
+R2
+IZM4=Q27aRm1>ei[^JJ0FB0
+R3
+S1
+R0
+R14
+R15
+R16
+!i122 30
+R19
+R7
+r1
+!s85 0
+31
+R17
+Z20 !s107 testbench.sv|
+R18
+!i113 1
+R11
+vtimingCounter
+R1
+!i10b 1
+!s100 7a4QoQLb4gL;3WMU<KUd@3
+R2
+Iicg:_Mgl;nEkaiEb>EK]d2
+R3
+R0
+R4
+R5
+R6
+!i122 28
+L0 129 48
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+ntiming@counter
+vtxBuffer
+R1
+!i10b 1
+!s100 ;8Xj2BV>D:lQGQmG0@XzU3
+R2
+IaU;K=jon`8O0C?if_@?df3
+R3
+R0
+R4
+R5
+R6
+!i122 28
+L0 71 23
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+ntx@buffer

@@ -1,0 +1,72 @@
+`timescale 1ns/1ps
+
+module testbench(); 
+ 
+	reg MISO, shift, reset_n, SCLK, CPOL, enable, CLOCK_50, scltrig;
+	wire [7:0] rx_buffer; 
+	
+	initial 
+		begin 		
+		reset_n = 1'b0;
+		SCLK = 1'b1; //assuming CPOL = 1 CPHA = 0 
+		CPOL = 1'b1; 
+		enable = 1'b1; 
+		#20ns;
+		reset_n = 1'b1; 
+		scltrig = 1'b1; 
+		shift = 1'b1; 
+		#20ns; 
+		end 
+		
+	 always
+	   begin 
+			CLOCK_50 = 1'b1; 
+			#10ns;
+			CLOCK_50 = 1'b0; 
+			#10ns;
+		end 
+	
+   
+	sclkLogic SCL1 (.sclk_trig(scltrig), .clk_ext(CLOCK_50), .CPOL(CPOL), .SCLK(SCLK));  
+	
+	rxBuffer  RXB1 (.MISO(MISO), .shift(shift), .reset_n(reset_n), .SCLK(SCLK), .rx_buffer(rx_buffer)); 	
+	
+	rxFeeder  RXF1 (.enable(enable), .reset_n(reset_n), .SCLK(SCLK), .MISO(MISO)); 
+
+endmodule 
+
+
+module rxFeeder(
+    input enable, 
+	 input reset_n, 
+	 input SCLK, 
+	 output MISO
+); 
+
+	reg [3:0] counter; 
+	
+	always @ (posedge SCLK) begin		
+		if(!reset_n)  
+			counter <= 4'b0; 
+		else
+			counter <= counter + 1'b1;	
+	end 
+	
+	always @ (posedge SCLK or posedge enable) begin 
+		if(enable) begin 
+			case(counter) 
+			 4'd1: MISO <= 1'b1; 
+			 4'd2: MISO <= 1'b0;
+			 4'd3: MISO <= 1'b1;
+		    4'd4: MISO <= 1'b1;
+			 4'd5: MISO <= 1'b0;
+			 4'd6: MISO <= 1'b1;
+		    4'd7: MISO <= 1'b0;
+			 4'd8: MISO <= 1'b1; 
+		         endcase;
+		end	
+	end 
+	
+endmodule
+
+ 

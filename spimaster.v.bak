@@ -1,0 +1,36 @@
+
+
+
+module timingCounter #(parameter countCyc = 50)( 
+
+	//this counter helps meet the timing requirements	
+	input edgeSignal; 
+	input enable; 
+	input reset_n; 
+	input clk; 
+	
+	output reg timing_met; //signal is pulled high until reset when the countCyc value is counted 
+); 
+
+  //input clk frequency of 100 MHz gives a resolution of 10 ns 
+  //the counter has a high time  
+  
+  reg [5:0] countCycles; //countCyc < 64
+  
+  always @ (posedge edgeSignal or negedge edgeSignal) begin 
+  
+    if(!reset_n || !enable) begin 		
+		timing_met <= 1'b0; 
+		countCycles <= 6'b0; 			
+	 end 		
+	 else if (enable) begin 
+		if(countCycles	== countCyc) begin 
+			timing_met <= 1'b1; 
+			countCycles <= 6'b0; 
+		end 
+		else 
+			countCycles <= countCycles + 1'b1;  
+	 end 
+	 
+  end 
+endmodule 
