@@ -50,14 +50,23 @@ module clockBox(
   	//clk_ext is SPI Frequency dependent and can be obtained either through a PLL or a Prescaler  
 	
 endmodule
- 
+
+module FSM(
+	
+); 
+
+
+endmodule 
+
+
 module sclkLogic(	
 	input  sclk_trig,
+	input  reset_n, 
 	input  clk_ext,
 	input  CPOL, 
 	output SCLK
 ); //asynchronous logic to drive SCLK
-   assign SCLK = (sclk_trig == 1'b1)? clk_ext : CPOL; 
+   assign SCLK = (sclk_trig == 1'b1 && reset_n)? clk_ext : CPOL; 
 endmodule 
 
 module shiftController #(parameter integer rx_cycle = 2, parameter integer tx_cycle = 2)(
@@ -66,21 +75,22 @@ module shiftController #(parameter integer rx_cycle = 2, parameter integer tx_cy
 	input enable, 
 	input reset_n,
    output shift_tx,
-	output shift_rx
+	output shift_rx,
+	output reg [2:0] cycle_counter //8 bit SCLK cycle counter
 ); 
 //control signals for TX and RX buffer 
 
-   reg [7:0] cycle_counter; //8 bit SCLK cycle counter
+ 
   
-	always @ (negedge SCLK or posedge enable or negedge reset_n) begin //posedge SCLK when CPOL = 0
-		if((!reset_n  || !sclk_trig) && enable) 
-			cycle_counter = 8'b0; 
-		else if(sclk_trig && enable) 
-			cycle_counter <= cycle_counter + 1'b1;						
+	always @ (negedge SCLK or negedge reset_n or negedge sclk_trig) begin //posedge SCLK when CPOL = 0
+		if(sclk_trig && enable && reset_n) 
+			cycle_counter <= cycle_counter + 1'b1;		
+		else
+			cycle_counter <= 3'b0; 
 	end 
 	
-	assign shift_tx = (enable == 1'b1 && cycle_counter == tx_cycle)? 1'b1:1'b0;	
-	assign shift_rx = (enable == 1'b1 && cycle_counter == rx_cycle)? 1'b1:1'b0; 
+	assign shift_tx = (enable == 1'b1 && cycle_counter >= tx_cycle)? 1'b1:1'b0;	
+	assign shift_rx = (enable == 1'b1 && cycle_counter >= rx_cycle)? 1'b1:1'b0; 
 	
 endmodule 
 
@@ -103,7 +113,7 @@ module txBuffer(
  	
 	reg [7:0] tx_buffer; 
 	
-	always @ (posedge SCLK or posedge ldData) begin //posedge when CPOL = 0 CPHA = 1 and 1,0 negedge otherwise 
+	always @ (posedge SCLK or posedge ldData) begin //posedge when CPOL = 0 CPHA = 1 and 1,0 | negedge otherwise 
 		if(!reset_n) 
 			tx_buffer <= 8'b0; 
 		else if(ldData) 

@@ -10,23 +10,23 @@ z2
 cModel Technology
 Z0 d/home/vishwa/SPI_Master
 vclockBox
-Z1 !s110 1688676128
+Z1 !s110 1689186441
 !i10b 1
 !s100 LRRX?mgJ^[kbOHIn_fSNm2
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
 I6M;C;X=fd1jHE2J2>ikDT3
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z4 w1688676116
+Z4 w1689186307
 Z5 8spimaster.v
 Z6 Fspimaster.v
-!i122 28
+!i122 56
 L0 38 15
 Z7 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z8 !s108 1688676128.000000
+Z8 !s108 1689186441.000000
 Z9 !s107 spimaster.v|
 Z10 !s90 -reportprogress|300|spimaster.v|
 !i113 1
@@ -35,16 +35,16 @@ nclock@box
 vcsnLogic
 R1
 !i10b 1
-!s100 :G2I8kk5zc0[C=Ab5Z]<c1
+!s100 20]8X?idX?2P[]j7JK[:63
 R2
-IeH3lRi5l5GVST=n<:hTSY1
+IAg3[fUo:8aP35=5C^U=AR3
 R3
 R0
 R4
 R5
 R6
-!i122 28
-L0 63 7
+!i122 56
+L0 89 7
 R7
 r1
 !s85 0
@@ -58,16 +58,16 @@ ncsn@logic
 vhalfCounter
 R1
 !i10b 1
-!s100 aK[oWk_CNKzk8UF1EM>m32
+!s100 88ao3A]PbJN157fkfVb?d2
 R2
-I?9C::L_1BHV^2kMjOHQW`2
+I16cneQ5?LhB2RNkJ6HY][0
 R3
 R0
 R4
 R5
 R6
-!i122 28
-L0 112 15
+!i122 56
+L0 139 15
 R7
 r1
 !s85 0
@@ -81,16 +81,16 @@ nhalf@counter
 vrxBuffer
 R1
 !i10b 1
-!s100 m[hJh13S[lk]:O3Xc5I123
+!s100 6WkDd_<k3LfdLPiCYSbd@0
 R2
-ISXhKW4oU0k4CgHMZb4gkh2
+IeDSE8h8?l6a=O]081OJK50
 R3
 R0
 R4
 R5
 R6
-!i122 28
-L0 96 15
+!i122 56
+L0 122 15
 R7
 r1
 !s85 0
@@ -103,42 +103,42 @@ R11
 nrx@buffer
 vrxFeeder
 Z12 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z13 !s110 1688676181
+!s110 1689186563
 !i10b 1
-!s100 EN@DIk0kB[D0eah^fP3LY0
+!s100 N?3;=QAX@0IY:UnG5=@FT0
 R2
-IoF>CmQ5KdLzkZdb;i46Mi2
+Ize5AHc77d?4z`99E2ja^?2
 R3
 S1
 R0
-Z14 w1688675466
-Z15 8testbench.sv
-Z16 Ftestbench.sv
-!i122 30
-L0 39 32
+Z13 w1689186557
+Z14 8testbench.sv
+Z15 Ftestbench.sv
+!i122 59
+L0 97 34
 R7
 r1
 !s85 0
 31
-Z17 !s108 1688676181.000000
+Z16 !s108 1689186562.000000
 !s107 testbench.sv|
-Z18 !s90 -reportprogress|300|testbench.sv|
+Z17 !s90 -reportprogress|300|testbench.sv|
 !i113 1
 R11
 nrx@feeder
 vsclkLogic
 R1
 !i10b 1
-!s100 [Am6oLXB:3R;h<90jN@L60
+!s100 YNT3nj4L`Hd6hO:l@1IB:0
 R2
-I12jOoGTSkUIXziOd2icSE3
+I4?HY=ZPzReZA5I]LGY5E;3
 R3
 R0
 R4
 R5
 R6
-!i122 28
-L0 54 8
+!i122 56
+L0 54 9
 R7
 r1
 !s85 0
@@ -149,6 +149,29 @@ R10
 !i113 1
 R11
 nsclk@logic
+vshiftController
+R1
+!i10b 1
+!s100 macH]6G?WUMamb`CjAOVQ0
+R2
+I<TVNJGE7:WmCHEIaoYYLH2
+R3
+R0
+R4
+R5
+R6
+!i122 56
+L0 64 24
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+nshift@controller
 vspimaster
 R1
 !i10b 1
@@ -160,8 +183,8 @@ R0
 R4
 R5
 R6
-!i122 28
-Z19 L0 3 34
+!i122 56
+L0 3 34
 R7
 r1
 !s85 0
@@ -173,41 +196,41 @@ R10
 R11
 vtestbench
 R12
-R13
+!s110 1689186562
 !i10b 1
-!s100 ;3GY<=KVW`S_^MfK@[f5f1
+!s100 SDX[mBfV4;cOA[Ah_[PZI0
 R2
-IZM4=Q27aRm1>ei[^JJ0FB0
+IDIK8zK:YhQzM5JiX8I@R@3
 R3
 S1
 R0
+R13
 R14
 R15
-R16
-!i122 30
-R19
+!i122 59
+L0 3 93
 R7
 r1
 !s85 0
 31
+R16
+Z18 !s107 testbench.sv|
 R17
-Z20 !s107 testbench.sv|
-R18
 !i113 1
 R11
 vtimingCounter
 R1
 !i10b 1
-!s100 7a4QoQLb4gL;3WMU<KUd@3
+!s100 Pa@X1[fc?[9X67D6iY[Vg2
 R2
-Iicg:_Mgl;nEkaiEb>EK]d2
+IGK?h9k_S94^OJW`NI<mOQ3
 R3
 R0
 R4
 R5
 R6
-!i122 28
-L0 129 48
+!i122 56
+L0 156 48
 R7
 r1
 !s85 0
@@ -221,16 +244,16 @@ ntiming@counter
 vtxBuffer
 R1
 !i10b 1
-!s100 ;8Xj2BV>D:lQGQmG0@XzU3
+!s100 c8l<lG=?W5b4IlW]lE8MY0
 R2
-IaU;K=jon`8O0C?if_@?df3
+I^XbJkQULa1?IoGRdElTVH0
 R3
 R0
 R4
 R5
 R6
-!i122 28
-L0 71 23
+!i122 56
+L0 97 23
 R7
 r1
 !s85 0

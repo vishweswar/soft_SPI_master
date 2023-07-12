@@ -5,4 +5,4 @@ vsim testbench
 log {/*}
 add wave {/*}
 
-run 1500ns 
+run 3000ns 
