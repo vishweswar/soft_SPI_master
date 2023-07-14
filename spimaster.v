@@ -55,7 +55,49 @@ module FSM(
 	
 ); 
 
+  localparam no_talk = 3'b000, idle_or_reset = 3'b001, press_wait = 3'b010, talk = 3'b011, display = 3'b100, result_wait = 3'b101;  
 
+ //state table 
+ always @ (*) begin 
+	case(current_state) 
+		
+
+	endcase 
+ end 
+ 
+ always @ (*) begin 
+    case(current_state) 
+	 
+	 endcase 
+	 
+	 if(current_state == no_talk) begin 
+	   if(talk_switch == 1'b1) 
+			next_state <= idle_or_reset; 
+		else 
+			next_state <= no_talk;
+	 end
+	 else if(current_state == idle_or_reset) begin 
+	   if(talk_key == 1'b0) 
+			next_state <= press_wait; 
+		else 
+			next_state <= idle_or_reset;
+	 end
+	 else if(current_state == press_wait) begin 
+	   if(talk_key == 1'b1) 
+			next_state <= talk; 
+		else 
+			next_state <= press_wait;
+	 end
+	 else if(current_state == talk) begin 
+	   if(talk_key == 1'b1) 
+			next_state <= talk; 
+		else 
+			next_state <= press_wait;
+	 end
+	 
+	 
+ end
+ 
 endmodule 
 
 
